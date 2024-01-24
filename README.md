@@ -5,6 +5,8 @@ A hotel booking app simplifies the process of finding and reserving hotel rooms.
 **Group Members and Student ID:**
 1. **Name:** Gursimrandeep Singh Khela (Team Leader)  
      **Student ID:** 1178896
+1. **Name:** Ayush sharma
+     **Student ID:** 1170026  
 
 **Brief Description:** The app often includes additional functionalities such as filtering options to narrow down choices, notifications for price alerts, and the ability to provide feedback. Overall, it serves as a convenient, one-stop solution for travelers to plan and secure their stays with ease and efficiency.
 
