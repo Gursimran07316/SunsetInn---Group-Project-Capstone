@@ -1,5 +1,5 @@
-# Name of the app:  Sunset Inn
-A hotel booking app simplifies the process of finding and reserving hotel rooms. This app helps users to browse available rooms and book accommodations from their mobile device.
+# Name of the app:  Sunset Recipes
+
 **FOL Group Name:** Group A
 
 **Group Members and Student ID:**
@@ -8,26 +8,21 @@ A hotel booking app simplifies the process of finding and reserving hotel rooms.
 1. **Name:** Ayush sharma
      **Student ID:** 1170026  
 
-**Brief Description:** The app often includes additional functionalities such as filtering options to narrow down choices, notifications for price alerts, and the ability to provide feedback. Overall, it serves as a convenient, one-stop solution for travelers to plan and secure their stays with ease and efficiency.
+**Brief Description:** The "Sunset Recipes" app concept is crafted to transform the cooking experience by providing a user-friendly interface featuring clear and concise recipes. Its broad appeal stems from its dedication to streamlining the cooking journey, rendering it an indispensable resource for those who wish to prepare tasty meals with ease.
 
 **Features of Our App:**
-1.	**Browse Rooms:** Explore our diverse range of rooms, each with detailed descriptions, photos, and amenities to meet your every need and preference.
+1.	**Browse Recipes** This feature allows users to effortlessly explore a collection of recipes, making it simple to discover new culinary ideas and cooking inspirations.
 
-2.	**Search Rooms:** Quickly find your ideal room with our intuitive search feature, which lets you look up rooms by name, type, or availability.
+2.	**Search Recipes:** With the Search Recipes tool, finding your desired recipes becomes a breeze, as you can look up recipes by name, ingredients, or cuisine, saving you time and effort in the kitchen.
 
-3.	**Filter Rooms:** Tailor your search with filters for price, room type, amenities, and more to ensure you find the perfect fit for your stay.
+3.	**Filter Recipes:** Tailor your recipe search by applying filters such as dietary restrictions, cooking time, or ingredients, ensuring that you find recipes that align with your specific preferences and dietary needs
 
-4.	**Sort Rooms:** Organize your room options based on criteria such as price, popularity, or ratings to easily identify the best room for you.
+4.	**Download recipe:** This feature will help to download the recipe in pdf form.
 
-5.	**Notification Price Alert:** Set up price alerts for your favorite rooms and receive instant notifications when prices drop, ensuring you never miss out on the best deals.
+5. **Get Recipes from API:** Stay up-to-date with the latest recipe trends and recommendations by accessing recipes from a diverse range of sources through an Application Programming Interface (API).
 
-6.	**Feedback Form:** Your opinions matter to us. Use our feedback form to share your experience and suggestions, helping us to continually improve our service.
+6. **Recipe Details Card:** Dive into the specifics of a recipe with the Recipe Details Card, which provides comprehensive information, including ingredients, instructions, and serving suggestions, making meal preparation a breeze.
 
-7.	**Night Mode:** Reduce eye strain with Night Mode, featuring a darker color palette for our app interface that's easy on the eyes, especially in low-light conditions.
+7. **Night Mode:** Activate Night Mode to transform the app's appearance with a darker color scheme, reducing eye strain and providing a more comfortable user experience, particularly in low-light environments.
 
-8.	**Menu Card:** Indulge in our in-room dining experience by browsing the digital menu card available in the app, offering a variety of culinary delights.
-
-9.	**Virtual Chat Assistant:** Get assistance at any time with our Virtual Chat Assistant, ready to answer your questions and provide recommendations for a seamless stay experience.
-
-
-Experience the future of hospitality with the Sunset Inn app, where every stay is curated to your preferences and every interaction is designed to exceed your expectations.
+8. **Notification Reminders:** Daily reminder to check new recipies.
