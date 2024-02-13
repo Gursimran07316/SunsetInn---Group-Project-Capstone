@@ -1,20 +1,40 @@
+import axios from 'axios';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, FlatList, Image  } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Home from './src/Screens/Home/Home';
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [recipes, setRecipes] = useState([]);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  useEffect(() => {
+    fetchRecipes();
+  }, []);
+  
+  const fetchRecipes = async () => {
+    try {
+      const response = await axios.get('https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian');
+      setRecipes(response.data.meals);
+   
+      // console.log(recipes);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const Stack = createStackNavigator();
+  return (
+    <NavigationContainer >
+    <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+ 
+      <Stack.Screen name="Home" >
+        {(props)=>
+        <Home {...props} prd={recipes}/>
+        }
+        
+      </Stack.Screen>
+     
+    </Stack.Navigator>
+  </NavigationContainer>
+  );
+};
