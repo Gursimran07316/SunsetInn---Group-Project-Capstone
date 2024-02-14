@@ -1,9 +1,5 @@
-
-
 import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-
-
 import COLOURS from '../../Constants/Colors'
 import styles from './styles';
 const RecipieCard = ({ navigation, data }) => {
@@ -24,13 +20,14 @@ const RecipieCard = ({ navigation, data }) => {
         </View>
         <View style={styles.detailCartButton}>
         <TouchableOpacity
-         
+         onPress={() => navigation.navigate('RecpieDetailScreen', { productID: data.idMeal })}
           style={[
             styles.detailCartButton,
             { backgroundColor:  COLOURS.blue  },
           ]}
           >
              <Text
+             
               style={styles.detailCartButtonText}
             >
               View Details
