@@ -31,7 +31,7 @@ const Home = ({ navigation, prd }) => {
               <Text style={styles.productCategoryText}>Featured recipies</Text>
               <Text style={styles.productCategoryCount}>{prd.length}</Text>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('SearchRecpieScreen')}>
             <Text style={styles.seeAllText}>Search</Text>
             </TouchableOpacity>
           </View>

@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Home from './src/Screens/Home/Home';
 import RecipeDetailScreen from './src/Screens/RecpieDetailScreen/RecpieDetailScreen';
+import SearchRecpieScreen from './src/Screens/SearchRecpieScreen/SearchRecpieScreen';
 export default function App() {
   const [recipes, setRecipes] = useState([]);
 
@@ -37,6 +38,11 @@ export default function App() {
       <Stack.Screen name="RecpieDetailScreen" >
         {(props)=>
         <RecipeDetailScreen {...props} />
+        }
+        </Stack.Screen>
+        <Stack.Screen name="SearchRecpieScreen" >
+        {(props)=>
+        <SearchRecpieScreen {...props} />
         }
         </Stack.Screen>
     </Stack.Navigator>
