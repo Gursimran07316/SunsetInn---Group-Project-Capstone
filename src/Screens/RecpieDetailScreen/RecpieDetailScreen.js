@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   Image,
   StyleSheet,
+  Linking
 } from 'react-native';
 import COLOURS from '../../Constants/Colors';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -23,7 +24,19 @@ const RecipeDetailScreen= ({ route, navigation}) => {
 
   
   const openYouTube = () => {
-    
+   
+      // Logic to open youtube videos
+     const url = recipe.strYoutube;
+     Linking.canOpenURL(url)
+       .then((supported) => {
+         if (supported) {
+           Linking.openURL(url);
+         } else {
+           console.log("Don't know how to open this URL: " + url);
+         }
+       })
+       .catch((err) => console.error('An error occurred', err));
+  
   };
   const shareRecipeVideo = () => {
     
