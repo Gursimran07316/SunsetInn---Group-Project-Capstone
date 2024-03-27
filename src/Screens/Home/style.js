@@ -20,7 +20,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     backgroundColor: COLOURS.backgroundLight,
   },
-  cartIcon: {
+  settingIcon: {
     fontSize: 18,
     color: COLOURS.backgroundMedium,
     padding: 12,

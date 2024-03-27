@@ -2,8 +2,8 @@ import React from 'react';
 import { View, Text, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
 
 import styles from './style';
-import Entypo from 'react-native-vector-icons/Entypo';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { Feather,Entypo } from '@expo/vector-icons';
+
 import RecipieCard from '../../Components/RecipieCard/RecipieCard';
 
 
@@ -14,7 +14,16 @@ const Home = ({ navigation, prd }) => {
       <StatusBar backgroundColor={'white'} barStyle="#6a51ae" />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.headerContainer}>
-         
+        <TouchableOpacity onPress={() => navigation.navigate('SearchRecpieScreen')}>
+
+<Entypo
+  name="shopping-bag"
+  style={styles.shoppingBagIcon}
+/>
+</TouchableOpacity>
+<TouchableOpacity onPress={() => navigation.navigate('Settings')}>
+<Feather name="settings"   style={styles.settingIcon} />
+</TouchableOpacity>
         </View>
         <View style={styles.shopInfoContainer}>
           <Text style={styles.shopName}>
