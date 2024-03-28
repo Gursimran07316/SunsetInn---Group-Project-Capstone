@@ -8,7 +8,7 @@ import {
   SafeAreaView,
   Image,
   StyleSheet,
-  Linking
+  Linking,Share
 } from 'react-native';
 import COLOURS from '../../Constants/Colors';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -43,8 +43,20 @@ const RecipeDetailScreen= ({ route, navigation}) => {
   
   };
   const shareRecipeVideo = () => {
+    const url = recipe.strYoutube; // Assuming this is the YouTube link to share
+    const message = `Check out this amazing recipe video: ${url}`;
     
+    Share.share({
+      message: message,
+      url: url, // Optional: if you want the link to be clickable (depending on the platform)
+      title: 'Amazing Recipe Video' // Optional: title of the content to be shared
+    }).then((result) => {
+      console.log(result); // You can handle the result of the share action here
+    }).catch((error) => {
+      console.error('Error sharing', error);
+    });
   };
+  
   useEffect(() => {
     // setProduct(getProductById(productID));
      fetchRecipe()
