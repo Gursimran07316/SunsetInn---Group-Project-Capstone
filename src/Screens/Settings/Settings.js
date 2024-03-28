@@ -81,7 +81,7 @@ async function scheduleReminder(){
         const id = await Notifications.scheduleNotificationAsync({
             content: {
                 title: "Recpies Reminder",
-                body: "Remember to check new repies",
+                body: "Remember to check new recipes",
                 subtitle: "Do not forget.",
                 
                 data: {
