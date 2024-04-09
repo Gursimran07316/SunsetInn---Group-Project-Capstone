@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-
+import COLOURS from '../../Constants/Colors';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -20,6 +20,11 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'flex-start',
         height: 'auto'
-    }
+    },darkText:{
+        color:COLOURS.white,
+      },
+      lightText:{
+        color:COLOURS.black,
+      }
 })
 export default styles;

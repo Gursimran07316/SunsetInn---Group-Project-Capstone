@@ -9,12 +9,12 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import axios from 'axios';
 import RecipieCard from '../../Components/RecipieCard/RecipieCard';
-const SearchRecpieScreen = ({ navigation}) => {
+const SearchRecpieScreen = ({ navigation,isDarkTheme}) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [recpies, setRecpies] = useState([])
  
-
- 
+  const backgroundColor = isDarkTheme ? "black" : 'white';
+  const textStyle=isDarkTheme?styles.darkText:styles.lightText
 
   
   
@@ -34,13 +34,14 @@ const SearchRecpieScreen = ({ navigation}) => {
 
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} backgroundColor={backgroundColor}>
          <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.headerContainer}>
           <TouchableOpacity onPress={() => navigation.goBack('Home')}>
             <Entypo
               name="chevron-left"
-              style={styles.shoppingBagIcon}
+              style={[styles.shoppingBagIcon,textStyle]}
+              size={24}
             />
           </TouchableOpacity>
           
@@ -50,19 +51,21 @@ const SearchRecpieScreen = ({ navigation}) => {
           style={{
             flex: 1,
             height: 40,
-            borderColor: COLOURS.gray,
+            borderColor: isDarkTheme ? COLOURS.white : COLOURS.gray, // Adjusted for theme
             borderWidth: 1,
             borderRadius: 8,
             paddingLeft: 10,
             marginRight: 8,
+            backgroundColor: isDarkTheme ? COLOURS.white : COLOURS.lightBackground, // Assuming you have these colors defined
+            color: isDarkTheme ? COLOURS.lightText : COLOURS.darkText,
           }}
           placeholder="Search products..."
           value={searchQuery}
           onChangeText={text => setSearchQuery(text)}
           onSubmitEditing={handleSearch}
         />
-        <TouchableOpacity onPress={handleSearch} style={styles.shoppingBagIcon}>
-          <MaterialCommunityIcons name="magnify" size={24}  />
+        <TouchableOpacity onPress={handleSearch} >
+          <MaterialCommunityIcons name="magnify" size={24} style={[styles.shoppingBagIcon,textStyle]}  />
         </TouchableOpacity>
       </View>
      
@@ -71,7 +74,7 @@ const SearchRecpieScreen = ({ navigation}) => {
           <View style={styles.productCardContainer}>
           
              {recpies.map(data => (
-              <RecipieCard data={data} key={data.idMeal} navigation={navigation}  />
+              <RecipieCard data={data} key={data.idMeal} navigation={navigation} isDarkTheme={isDarkTheme} />
             ))}
           </View>
         </View>

@@ -16,7 +16,6 @@ export default StyleSheet.create({
     padding: 16,
   },
   shoppingBagIcon: {
-    fontSize: 18,
     color: COLOURS.backgroundMedium,
     padding: 12,
     borderRadius: 10,
@@ -112,5 +111,10 @@ export default StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
+  },darkText:{
+    color:COLOURS.white,
   },
+  lightText:{
+    color:COLOURS.black,
+  }
 });

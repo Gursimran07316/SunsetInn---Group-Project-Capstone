@@ -29,7 +29,7 @@ Notifications.setNotificationHandler({
 
 export default function App() {
   const [recipes, setRecipes] = useState([]);
-
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   useEffect(() => {
     fetchRecipes();
   }, []);
@@ -70,6 +70,13 @@ useEffect(() => {
       console.error(error);
     }
   };
+
+
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme); // Add this function
+    console.log('chsnge it');
+  };
+
   const Stack = createStackNavigator();
   return (
     <NavigationContainer >
@@ -77,23 +84,23 @@ useEffect(() => {
  
       <Stack.Screen name="Home" >
         {(props)=>
-        <Home {...props} prd={recipes}/>
+        <Home {...props} prd={recipes} toggleTheme={toggleTheme} isDarkTheme={isDarkTheme}/>
         }
         
       </Stack.Screen>
       <Stack.Screen name="RecpieDetailScreen" >
         {(props)=>
-        <RecipeDetailScreen {...props} />
+        <RecipeDetailScreen {...props}  isDarkTheme={isDarkTheme}/>
         }
         </Stack.Screen>
         <Stack.Screen name="SearchRecpieScreen" >
         {(props)=>
-        <SearchRecpieScreen {...props} />
+        <SearchRecpieScreen {...props}  isDarkTheme={isDarkTheme}/>
         }
         </Stack.Screen>
         <Stack.Screen name="Settings" >
         {(props)=>
-        <Settings {...props} />
+        <Settings {...props}  isDarkTheme={isDarkTheme} />
         }
         </Stack.Screen>
     </Stack.Navigator>

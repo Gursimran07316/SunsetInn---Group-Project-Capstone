@@ -21,7 +21,6 @@ export default StyleSheet.create({
     backgroundColor: COLOURS.backgroundLight,
   },
   settingIcon: {
-    fontSize: 18,
     color: COLOURS.backgroundMedium,
     padding: 12,
     borderRadius: 10,
@@ -111,5 +110,12 @@ export default StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
   },
+  darkText:{
+    color:COLOURS.white,
+  },
+  lightText:{
+    color:COLOURS.black,
+  }
+
 });
 

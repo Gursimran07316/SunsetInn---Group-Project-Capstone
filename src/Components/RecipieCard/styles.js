@@ -63,6 +63,11 @@ export default StyleSheet.create({
     letterSpacing: 1,
     color: COLOURS.white,
     textTransform: 'uppercase',
+  },darkText:{
+    color:COLOURS.white,
   },
+  lightText:{
+    color:COLOURS.black,
+  }
   
 });

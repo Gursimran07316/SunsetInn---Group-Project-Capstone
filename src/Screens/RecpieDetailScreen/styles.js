@@ -115,5 +115,10 @@ export default StyleSheet.create({
       shareButton: {
         marginLeft: 10, // Adds spacing between the buttons
         backgroundColor: '#28a745',
+      },darkText:{
+        color:COLOURS.white,
+      },
+      lightText:{
+        color:COLOURS.black,
       }
 });

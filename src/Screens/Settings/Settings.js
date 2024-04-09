@@ -3,10 +3,11 @@ import { View, Text, Switch, Platform, ScrollView } from 'react-native';
 import styles from './styles';
 import * as Notifications from 'expo-notifications';
 
-export default function Settings() {
+export default function Settings({isDarkTheme}) {
     const [reminder, setReminder] = useState(false);
     const [schedule, setSchedule] = useState([]);
-
+    const backgroundColor = isDarkTheme ? "black" : 'white';
+    const textStyle=isDarkTheme?styles.darkText:styles.lightText
     const handleReminderPress = async () => {
         if(!reminder){
             const scheduled = await scheduleReminder()
@@ -39,19 +40,19 @@ export default function Settings() {
     }, [])
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} backgroundColor={backgroundColor}>
         <View style={styles.reminderSwitch}>
-            <Text>Set Daily Reminder</Text>
+            <Text style={textStyle}>Set Daily Reminder</Text>
             <Switch value= {reminder} onValueChange={handleReminderPress} />
         </View>
         <View style={styles.scheduledNotification}>
-            <Text>Scheduled Notifications: </Text>
-            <Text>{schedule.length}</Text>
+            <Text style={textStyle}>Scheduled Notifications: </Text>
+            <Text style={textStyle}>{schedule.length}</Text>
         </View>
-        <View style={styles.notificationList}>
+        <View style={[styles.notificationList,textStyle]}>
             {schedule.map((item, index) => (
                 
-                <Text key={index}>
+                <Text key={index} style={textStyle}>
                     {item.type}: {item.id}
                 </Text>
             ))}

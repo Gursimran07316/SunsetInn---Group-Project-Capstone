@@ -20,12 +20,13 @@ import axios from 'axios';
 
 
 
-const RecipeDetailScreen= ({ route, navigation}) => {
+const RecipeDetailScreen= ({ route, navigation,isDarkTheme}) => {
   const { productID } = route.params;
 
   const [recipe, setRecipe] = useState({});
 
-
+  const backgroundColor = isDarkTheme ? "black" : 'white';
+  const textStyle=isDarkTheme?styles.darkText:styles.lightText
   
   const openYouTube = () => {
    
@@ -74,14 +75,14 @@ const RecipeDetailScreen= ({ route, navigation}) => {
   
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={styles.safeArea} backgroundColor={backgroundColor}>
       <StatusBar
         backgroundColor={COLOURS.backgroundLight}
         barStyle="dark-content"
       />
       <ScrollView style={styles.container}> 
       <View style={styles.imageContainer}>
-          <View style={styles.headerContainer}>
+          <View style={styles.headerContainer} backgroundColor={backgroundColor} >
             <TouchableOpacity onPress={() => navigation.goBack('Home')}>
               <Entypo
                 name="chevron-left"
@@ -93,32 +94,32 @@ const RecipeDetailScreen= ({ route, navigation}) => {
         
         <Image source={{ uri: recipe.strMealThumb }} style={styles.image} />
         <View style={styles.detailContainer}>
-          <Text style={styles.title}>{recipe.strMeal}</Text>
+          <Text style={[styles.title,textStyle]}>{recipe.strMeal}</Text>
 
           <View style={styles.infoContainer}>
-            <Text style={styles.infoTitle}>Category:</Text>
-            <Text style={styles.infoContent}>{recipe.strCategory}</Text>
+            <Text style={[styles.infoTitle,textStyle]}>Category:</Text>
+            <Text style={[styles.infoContent,textStyle]}>{recipe.strCategory}</Text>
           </View>
 
           <View style={styles.infoContainer}>
-            <Text style={styles.infoTitle}>Cuisine:</Text>
-            <Text style={styles.infoContent}>{recipe.strArea}</Text>
+            <Text style={[styles.infoTitle,textStyle]}>Cuisine:</Text>
+            <Text style={[styles.infoContent,textStyle]}>{recipe.strArea}</Text>
           </View>
 
-          <Text style={styles.subTitle}>Ingredients</Text>
+          <Text style={[styles.subTitle,textStyle]}>Ingredients</Text>
           {Object.keys(recipe).map((key) => {
             if (key.startsWith('strIngredient') && recipe[key]) {
               const measureKey = `strMeasure${key.slice('strIngredient'.length)}`;
               return (
-                <Text key={key} style={styles.ingredient}>
+                <Text key={key} style={[styles.ingredient,textStyle]}>
                   - {recipe[key]}: {recipe[measureKey]}
                 </Text>
               );
             }
           })}
 
-          <Text style={styles.subTitle}>Instructions</Text>
-          <Text style={styles.instructions}>{recipe.strInstructions}</Text>
+          <Text style={[styles.subTitle,textStyle]}>Instructions</Text>
+          <Text style={[styles.instructions,textStyle]}>{recipe.strInstructions}</Text>
 
           <View style={styles.buttonContainer}>
   <TouchableOpacity onPress={openYouTube} style={[styles.button, styles.watchButton]}>
