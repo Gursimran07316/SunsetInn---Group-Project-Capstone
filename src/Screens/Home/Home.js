@@ -10,7 +10,6 @@ import RecipieCard from '../../Components/RecipieCard/RecipieCard';
 const Home = ({ navigation, prd,toggleTheme,isDarkTheme }) => {
   const backgroundColor = isDarkTheme ? "black" : 'white';
   const textStyle=isDarkTheme?styles.darkText:styles.lightText
-  console.log(prd);
   return (
     <View style={styles.container} backgroundColor={backgroundColor} >
       <StatusBar backgroundColor={backgroundColor} barStyle="#6a51ae" />
@@ -32,7 +31,7 @@ const Home = ({ navigation, prd,toggleTheme,isDarkTheme }) => {
 <MaterialIcons name="mode-night" size={24} style={textStyle} />
 </TouchableOpacity>
 <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
-<Feather name="settings" size={24}   style={[textStyle]} />
+<Feather name="settings" size={24}   style={textStyle} />
 </TouchableOpacity>
 
 </View>
@@ -45,6 +44,12 @@ const Home = ({ navigation, prd,toggleTheme,isDarkTheme }) => {
           Welcome to Sunset Inn Recipes {"\n"} Where Every Dish Tells a Story
             
           </Text>
+          <TouchableOpacity  style={styles.randomRecipeButton } onPress={() => navigation.navigate('RecpieDetailScreen', { randomMeal: true })}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }} >
+        <Entypo name="cycle" size={24} style={[{ marginRight: 8 },textStyle]} />
+        <Text style={[styles.randomRecipeButtonText,textStyle]}>Can't Decide? Spin the Flavor Wheel!</Text>
+    </View>
+    </TouchableOpacity>
         </View>
         <View style={styles.productCategoryContainer}>
           <View style={styles.productCategoryHeader}>

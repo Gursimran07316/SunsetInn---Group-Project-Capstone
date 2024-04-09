@@ -21,7 +21,7 @@ import axios from 'axios';
 
 
 const RecipeDetailScreen= ({ route, navigation,isDarkTheme}) => {
-  const { productID } = route.params;
+  
 
   const [recipe, setRecipe] = useState({});
 
@@ -59,12 +59,28 @@ const RecipeDetailScreen= ({ route, navigation,isDarkTheme}) => {
   };
   
   useEffect(() => {
-    // setProduct(getProductById(productID));
-     fetchRecipe()
+    const { randomMeal } = route.params;
+     
+    if (randomMeal){
+     fetchRandomRecipe()
+    }else{
+      fetchRecipe()
+    }
   }, []);
  const fetchRecipe = async () => {
     try {
+      const { productID } = route.params;
       const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${productID}`);
+      setRecipe(response.data.meals[0]);
+   
+    
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const fetchRandomRecipe = async () => {
+    try {
+      const response = await axios.get(`https://www.themealdb.com/api/json/v1/1/random.php`);
       setRecipe(response.data.meals[0]);
    
     

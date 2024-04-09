@@ -115,7 +115,19 @@ export default StyleSheet.create({
   },
   lightText:{
     color:COLOURS.black,
-  }
+  },randomRecipeButton: {
+    marginTop: 20, // Adjust spacing as needed
+    backgroundColor: COLOURS.backgroundMedium, // Choose a background color that fits your theme
+    paddingVertical: 12,
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    alignSelf: 'center', // Center the button within its container
+},
+randomRecipeButtonText: { // Text color that contrasts with the button background
+    fontSize: 16,
+    fontWeight: '500',
+},
+
 
 });
 
