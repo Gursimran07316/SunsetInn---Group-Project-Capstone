@@ -15,11 +15,11 @@
 
 2.	**Search Recipes:** With the Search Recipes tool, finding your desired recipes becomes a breeze, as you can look up recipes by name, ingredients, or cuisine, saving you time and effort in the kitchen.
 
-3.	**Filter Recipes:** Tailor your recipe search by applying filters such as dietary restrictions, cooking time, or ingredients, ensuring that you find recipes that align with your specific preferences and dietary needs
+3.	**Watch Recipe Videos:** Enhance your cooking experience by directly accessing YouTube videos for each recipe. This feature allows you to visually follow along with detailed cooking instructions, making it easier to master new dishes. Just tap the "Watch Video" button to see the recipe come to life on YouTube, perfect for cooks who prefer video tutorials over written instructions.
 
-4.	**Download recipe:** This feature will help to download the recipe in pdf form.
+4.	**Random recipe:** This feature will show a random recipe to the user when he or she is unable to decide what to cook today.
 
-5. **Get Recipes from API:** Stay up-to-date with the latest recipe trends and recommendations by accessing recipes from a diverse range of sources through an Application Programming Interface (API).
+5. **Share recipe video:** Share recipe video with you family and friends using whatsapp or other app using single button.
 
 6. **Recipe Details Card:** Dive into the specifics of a recipe with the Recipe Details Card, which provides comprehensive information, including ingredients, instructions, and serving suggestions, making meal preparation a breeze.
 
